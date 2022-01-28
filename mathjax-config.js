@@ -1,8 +1,8 @@
 window.MathJax = {
-  loader: {load: ['[tex]/physics', '[tex]/mathtools', '[tex]/color', '[tex]/upgreek', '[tex]/centernot']},
+  loader: {load: ['[tex]/physics', '[tex]/mathtools', '[tex]/color', '[tex]/upgreek', '[tex]/centernot', '[tex]/noerrors']},
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
-    packages: { '[+]': ['physics', 'mathtools', 'color', 'upgreek', 'centernot'] },
+    packages: { '[+]': ['physics', 'mathtools', 'color', 'upgreek', 'centernot', 'noerrors'] },
     color: {
       padding: '5px',
       borderWidth: '2px',
@@ -40,6 +40,11 @@ window.MathJax = {
     tagSide: 'right',
     tagIndent: '0.8em', /* 数式と式番号の距離がtagIndentで指定した距離よりも短くならないように調整 */
     processRefs: true,
+    processEscapes: true,
+    autoload: {
+      color: [],
+      colorV2: ['color']
+    },
   },
   svg: {
     fontCache: 'global'
@@ -48,6 +53,7 @@ window.MathJax = {
     displayAlign: 'left',
     displayIndent: '2em',
     mtextInheritFont: true, /* 数式中の \text{} を本文と同じフォントにする */
+    matchFontHeight: false,
   },
   startup: {
     ready: () => {
@@ -58,7 +64,22 @@ window.MathJax = {
         console.log('MathJax initial typesetting complete');
       });
     }
-  }
+  },
+  options: {
+    renderActions: {
+      find_script_mathtex: [10, function (doc) {
+        for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+          const display = !!node.type.match(/; *mode=display/);
+          const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+          const text = document.createTextNode('');
+          node.parentNode.replaceChild(text, node);
+          math.start = {node: text, delim: '', n: 0};
+          math.end = {node: text, delim: '', n: 0};
+          doc.math.push(math);
+        }
+      }, '']
+    }
+  },
 };
 
 (function () {
