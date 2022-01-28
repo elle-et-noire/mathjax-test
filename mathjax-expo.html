@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>MathJax 表示例集</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="MathJax の表示サンプル">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+</head>
+
+<body>
+  <h1>MathJax 表示例集</h1>
+  <h2>ギリシャ文字</h2>
+  <ul>
+    <li>大文字立体を出力する $2$ つの方法（<code>\Gamma</code> と <code>\Upgamma</code> など）は同じ出力で、そのようなものは <code>\Gamma</code> などの方のコマンドだけ示しています。</li>
+    <li>大文字のうちアルファベットで代用できるものはコマンドが存在しません（<code>\Alpha</code> はエラー）。</li>
+    <!-- <li>全角の <span style="font-family: serif;">ϑ</span> が本文のフォントでは表示されなかったため、そこだけフォントを解除しています。</li> -->
+    <li>全角のギリシャ文字は見た目はアルファベットと同じものもありますが、文字コードは異なります。</li>
+    <li><code>\phi,\varphi</code> は <code>\upphi,\upvarphi</code> になると入れ替わることに注意してください。</li>
+    <li>フォントによっては全角の φ と ϕ が入れ替わって表示されます（例えば筆者の環境では consolas と Yu Gothic UI とでは逆になりました）。</li>
+  </ul>
+  <table style="margin-top: 3em; margin-left: 3em;">
+    <colgroup>
+      <col style="width: 140px;">
+      <col style="width: 100px;">
+      <col style="width: 140px;">
+      <col style="width: 100px;">
+      <col style="width: 100px;">
+      <col style="width: 140px;">
+      <col style="width: 100px;">
+      <col style="width: 140px;">
+      <col style="width: 100px;">
+      <col style="width: 100px;">
+    </colgroup>
+    <tr>
+      <th>コマンド</th><th>出力</th><th>コマンド</th><th>出力</th><th>全角</th><th>コマンド</th><th>出力</th><th>コマンド</th><th>出力</th><th>全角</th>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\alpha</code></td><td>$\alpha$</td><td><code>\upalpha</code></td><td>$\upalpha$</td><td>α</td><td></td><td></td><td></td><td></td><td>Α</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\beta</code></td><td>$\beta$</td><td><code>\upbeta</code></td><td>$\upbeta$</td><td>β</td><td></td><td></td><td></td><td></td><td>Β</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\gamma</code></td><td>$\gamma$</td><td><code>\upgamma</code></td><td>$\upgamma$</td><td>γ</td><td><code>\Gamma</code></td><td>$\Gamma$</td><td><code>\varGamma</code></td><td>$\varGamma$</td><td>Γ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\delta</code></td><td>$\delta$</td><td><code>\updelta</code></td><td>$\updelta$</td><td>δ</td><td><code>\Delta</code></td><td>$\Delta$</td><td><code>\varDelta</code></td><td>$\varDelta$</td><td>Δ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\epsilon</code></td><td>$\epsilon$</td><td><code>\upepsilon</code></td><td>$\upepsilon$</td><td>ϵ</td><td></td><td></td><td></td><td></td><td>Ε</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\varepsilon</code></td><td>$\varepsilon$</td><td><code>\upvarepsilon</code></td><td>$\upvarepsilon$</td><td>ε</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\zeta</code></td><td>$\zeta$</td><td><code>\upzeta</code></td><td>$\upzeta$</td><td>ζ</td><td></td><td></td><td></td><td></td><td>Ζ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\eta</code></td><td>$\eta$</td><td><code>\upeta</code></td><td>$\upeta$</td><td>η</td><td></td><td></td><td></td><td></td><td>Η</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\theta</code></td><td>$\theta$</td><td><code>\uptheta</code></td><td>$\uptheta$</td><td>θ</td><td><code>\Theta</code></td><td>$\Theta$</td><td><code>\varTheta</code></td><td>$\varTheta$</td><td>Θ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\vartheta</code></td><td>$\vartheta$</td><td><code>\upvartheta</code></td><td>$\upvartheta$</td><td>ϑ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\iota</code></td><td>$\iota$</td><td><code>\upiota</code></td><td>$\upiota$</td><td>ι</td><td></td><td></td><td></td><td></td><td>Ι</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\kappa</code></td><td>$\kappa$</td><td><code>\upkappa</code></td><td>$\upkappa$</td><td>κ</td><td></td><td></td><td></td><td></td><td>Κ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\varkappa</code></td><td>$\varkappa$</td><td></td><td></td><td>ϰ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\lambda</code></td><td>$\lambda$</td><td><code>\uplambda</code></td><td>$\uplambda$</td><td>λ</td><td><code>\Lambda</code></td><td>$\Lambda$</td><td><code>\varLambda</code></td><td>$\varLambda$</td><td>Λ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\mu</code></td><td>$\mu$</td><td><code>\upmu</code></td><td>$\upmu$</td><td>μ</td><td></td><td></td><td></td><td></td><td>Μ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\nu</code></td><td>$\nu$</td><td><code>\upnu</code></td><td>$\upnu$</td><td>ν</td><td></td><td></td><td></td><td></td><td>Ν</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\xi</code></td><td>$\xi$</td><td><code>\upxi</code></td><td>$\upxi$</td><td>ξ</td><td><code>\Xi</code></td><td>$\Xi$</td><td><code>\varXi</code></td><td>$\varXi$</td><td>Ξ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\omicron</code></td><td>$\omicron$</td><td><code>\upomicron</code></td><td>$\upomicron$</td><td>ο</td><td></td><td></td><td></td><td></td><td>Ο</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\pi</code></td><td>$\pi$</td><td><code>\uppi</code></td><td>$\uppi$</td><td>π</td><td><code>\Pi</code></td><td>$\Pi$</td><td><code>\varPi</code></td><td>$\varPi$</td><td>Π</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\varpi</code></td><td>$\varpi$</td><td><code>\upvarpi</code></td><td>$\upvarpi$</td><td>ϖ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\rho</code></td><td>$\rho$</td><td><code>\uprho</code></td><td>$\uprho$</td><td>ρ</td><td></td><td></td><td></td><td></td><td>Ρ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\varrho</code></td><td>$\varrho$</td><td><code>\upvarrho</code></td><td>$\upvarrho$</td><td>ϱ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\sigma</code></td><td>$\sigma$</td><td><code>\upsigma</code></td><td>$\upsigma$</td><td>σ</td><td><code>\Sigma</code></td><td>$\Sigma$</td><td><code>\varSigma</code></td><td>$\varSigma$</td><td>Σ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\varsigma</code></td><td>$\varsigma$</td><td><code>\upvarsigma</code></td><td>$\upvarsigma$</td><td>ς</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\tau</code></td><td>$\tau$</td><td><code>\uptau</code></td><td>$\uptau$</td><td>τ</td><td></td><td></td><td></td><td></td><td>Τ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\upsilon</code></td><td>$\upsilon$</td><td><code>\upupsilon</code></td><td>$\upupsilon$</td><td>υ</td><td><code>\Upsilon</code></td><td>$\Upsilon$</td><td><code>\varUpsilon</code></td><td>$\varUpsilon$</td><td>Υ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\phi</code></td><td>$\phi$</td><td><code>\upphi</code></td><td>$\upphi$</td><td>φ</td><td><code>\Phi</code></td><td>$\Phi$</td><td><code>\varPhi</code></td><td>$\varPhi$</td><td>Φ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\varphi</code></td><td>$\varphi$</td><td><code>\upvarphi</code></td><td>$\upvarphi$</td><td>ϕ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\chi</code></td><td>$\chi$</td><td><code>\upchi</code></td><td>$\upchi$</td><td>χ</td><td></td><td></td><td></td><td></td><td>Χ</td>
+    </tr>
+    <tr class="row-odd">
+      <td><code>\psi</code></td><td>$\psi$</td><td><code>\uppsi</code></td><td>$\uppsi$</td><td>ψ</td><td><code>\Psi</code></td><td>$\Psi$</td><td><code>\vaPsi</code></td><td>$\varPsi$</td><td>Ψ</td>
+    </tr>
+    <tr class="row-even">
+      <td><code>\omega</code></td><td>$\omega$</td><td><code>\upomega</code></td><td>$\upomega$</td><td>ω</td><td><code>\Omega</code></td><td>$\Omega$</td><td><code>\varOmega</code></td><td>$\varOmega$</td><td>Ω</td>
+    </tr>
+  </table>
+  <h2>Feynman slash</h2>
+  物理理学的には理解していませんがとりあえず。
+  \begin{align}
+    \slashed{\partial}\slashed{A}
+  \end{align}
+  <h2>バー付きλ</h2>
+  J.J. Sakuraiの量子力学で $\lambda/2\pi$ として登場しました。
+  $$
+  \newcommand{\lambdabar}{\lambda \kern -0.55em\raise 0.6ex \hbox{--}}
+  $$
+  \begin{align}
+    2\pi\lambdabar=\lambda
+  \end{align}
+  <h2>開区間</h2>
+  Twitterで開区間の記号を提案していた人がいて、そのアイデアをMathJaxで実現しました。$\LaTeX$でも使えるはず。
+  $$
+  \definecolor{bg}{rgb}{0, 0.168, 0.212}
+  \newcommand{\filledcirca}{{\raise 0.1ex{\scriptsize\bullet}\kern -0.37em\raise -0.3ex{\color{bg}\Large\cdot}}}
+  \newcommand{\filledcircb}{{\raise 0.2ex{\color{bg}\tiny\bullet}\kern -0.25em\raise 0.2ex{\color{white}\tiny\circ}}}
+  \newcommand{\filledcirc}{{\raise 0.1ex{\color{bg}\scriptsize\bullet}\kern -0.35em\raise 0.1ex{\scriptsize\circ}}}
+  \newcommand{\livo}{{\kern 0.1em[\kern -0.32em\filledcirc\kern 0.1em}}
+  \newcommand{\rivo}{{\kern 0.1em]\kern -0.32em\filledcirc\kern 0.1em}}
+  \DeclarePairedDelimitersX{\ivoo}[2]{\livo}{\rivo}{{#1},{#2}}
+  \DeclarePairedDelimitersX{\ivoc}[2]{\livo}{]}{{#1},{#2}}
+  \DeclarePairedDelimitersX{\ivco}[2]{[}{\rivo}{{#1},{#2}}
+  \DeclarePairedDelimitersX{\ivcc}[2]{[}{]}{{#1},{#2}}
+  \DeclarePairedDelimitersX{\ivooa}[2]{]}{[}{{#1},{#2}}
+  \DeclarePairedDelimiters{\IntervalOO}{]}{[}
+  \newcommand{\ivoob}[2]{\IntervalOO*{#1, #2}}
+  $$
+  \begin{align}
+    &\ivoo{a}{b}\{\ivoo{a}{b}\}\ivoo{-1}{1},[-1,1],\ivooa*{-1}{\dfrac{1}{f}},\ivoob{-1}{\dfrac{1}{f}}\\
+    &a\ivoo{c}{d}a[c,d]a
+  \end{align}
+  $\theta\in\ivoo{0}{1}, \phi\in\ivco{0}{2\pi}, x\in \ivoc{-1}{0}$
+  <h2>参考文献</h2>
+  <ul>
+    <li><a href="https://ja.wikipedia.org/wiki/Unicode%E4%B8%80%E8%A6%A7_0000-0FFF" target="_blank" rel="noopener noreferrer external">Unicode一覧 0000-00FF - Wikipedia</a></li>
+    <li><a href="https://mathlandscape.com/greek-alphabet/" target="_blank" rel="noopener noreferrer external">ギリシャ文字一覧とLaTeXでの出力方法</a></li>
+  </ul>
+</body>
+</html>

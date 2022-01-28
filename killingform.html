@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>実数の連続性と関数の連続性</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="Killing form の検算。">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+</head>
+
+<body>
+  \begin{align}
+    \def\ad{\operatorname{ad}}
+  \end{align}
+  \begin{align}
+    \tilde{E}_{ij}\coloneqq \dfrac{\dyad{i}{j}-\dyad{j}{i}}{\sqrt{2}}
+  \end{align}
+  とおく。
+  \begin{align}
+    \mathfrak{o}(n)=\qty{X\in M_n(\mathbb{R})\mid X+X^\mathrm{T}=0}
+  \end{align}
+  の基底は $\qty{\tilde{E}_{ij}}_{1\le i < j \le n}$ に取れる。
+  Lie環としてのトレースは
+  \begin{align}
+    \tr(\bullet)&=\sum_{i < j}\Tr \qty[\tilde{E}_{ij}^\dagger\bullet\tilde{E}_{ij}]\\
+    &=\dfrac{1}{2}\sum_{i,j}\Tr\qty[\tilde{E}_{ij}^\dagger\bullet\tilde{E}_{ij}]
+  \end{align}
+  となる。$2$行目の変形では $\tilde{E}_{ij}$ が $i,j$ について反対称であることを用いた。$i,j$ が入れ替わっても $\tilde{E}_{ij}^\dagger$ と
+  $\tilde{E}_{ij}$ で打ち消し合うので符号は変わらない。変形を進めると
+  \begin{align}
+    \tr(\bullet)&=\dfrac{1}{4}\sum_{i,j}\Tr[(\dyad{j}{i}-\dyad{i}{j})\bullet(\dyad{i}{j}-\dyad{j}{i})]\\
+    &=\dfrac{1}{4}\qty(2n\Tr(\bullet)-2\Tr(\bullet))\\
+    &=\dfrac{n-1}{2}\Tr(\bullet)
+  \end{align}
+  となる。このときKilling formは
+  \begin{align}
+    B(X,X)&=\sum_{i,j}\Tr\qty[\tilde{E}_{ij}^\dagger \ad(X)\ad(X)\tilde{E}_{ij}]\\
+    &=\sum_{i,j}\Tr\qty[\tilde{E}_{ij}^\dagger\qty(X^2\tilde{E}_{ij}-2X\tilde{E}_{ij}X+\tilde{E}_{ij}X^2)]\\
+    &=(n-1)\Tr X^2-\dfrac{1}{2}\sum_{i,j}\Tr\qty[(\dyad{j}{i}-\dyad{i}{j})X(\dyad{i}{j}-\dyad{j}{i})X]\\
+    &=(n-1)\Tr X^2-\sum_{i,j}\qty(\mel{i}{X}{i}\mel{j}{X}{j}-\mel{i}{X}{j}^2)\\
+    &=(n-1)\Tr X^2-\qty(\Tr X)^2+\sum_{i,j}\mel{i}{X}{j}^2
+  \end{align}
+  ここで、$X\in\mathfrak{o}$ つまり $X^\mathrm{T}+X=0$ だと仮定すると、$\mel{i}{X}{j}=\mel{j}{X^\mathrm{T}}{i}=-\mel{j}{X}{i}$ が
+  成り立つ（1つ目の変形は転置の定義より）。また $\Tr X=0$ より
+  \begin{align}
+    B(X,X)&=(n-1)\Tr X^2-0-\sum_{i,j}\mel{i}{X}{j}\mel{j}{X}{i}\\
+    &=(n-2)\Tr X^2
+  \end{align}
+  となる。
+</body>
+</html>

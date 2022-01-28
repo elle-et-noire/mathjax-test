@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <title>もしも数演算子の定義が逆順だったら</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+</head>
+
+<body>
+  \[
+  \def\tN{\widetilde{N}}
+  \def\tket#1{\widetilde{\ket{#1}}}
+  \def\tmel#1#2#3{\widetilde{\langle #1 \lvert} #2 \widetilde{\rvert #3 \rangle}}
+  \def\tbraket#1#2{\widetilde{\langle#1}\lvert\widetilde{#2\rangle}}
+  \]
+  \begin{align}
+  [a,a^\dagger]=1
+  \end{align}
+  という交換関係を満たす演算子 $a,a^\dagger$ を用意して、
+  \begin{align}
+  N\coloneqq a^\dagger a
+  \end{align}
+  とするとこれは普通の量子力学の教科書に載っている数演算子の定義である。もしもこれを逆にして
+  \begin{align}
+  \tN\coloneqq aa^\dagger
+  \end{align}
+  と定義するとその後の論理展開はどうなるのか。まず交換関係は
+  \begin{align}
+  [\tN,a]&=[aa^\dagger,a]=-a\\
+  [\tN,a^\dagger]&=[aa^\dagger,a^\dagger]=a^\dagger
+  \end{align}
+  となる。これは $N$ と同じ交換関係である（$\widetilde{N}=N+1$ なので当然）。
+  続いて $\tN$ の固有状態および固有値を導入する（冗長かもしれないが許されたい）。
+  \begin{align}
+  \tN\tket{n}&=n\tket{n}\quad (n\in\mathbb{R})\\
+  \tbraket{n}{m}&=\delta_{nm}
+  \end{align}
+  として固有値 $n$ に対する固有状態を定めることにする。$\tN$ はエルミート演算子なので固有値は $\mathbb{R}$ に
+  含まれ、また異なる固有値に対する固有ベクトルは直交するため、あとは規格化すれば上記の固有状態が得られる。
+  $a,a^\dagger$ の $\tket{n}$ に対する作用は
+  \begin{align}
+  \tN a\tket{n}&=a\tN\tket{n}+[\tN,a]\tket{n}=(n-1)a\tket{n}\\
+  \tN a^\dagger\tket{n}&=a^\dagger\tN\tket{n}+[\tN,a^\dagger]\tket{n}=(n+1)a^\dagger\tket{n}\\
+  \end{align}
+  となり、
+  \begin{align}
+  a\tket{n}&\propto \tket{n-1}\\
+  a^\dagger\tket{n}&\propto\tket{n+1}
+  \end{align}
+  が分かる。係数を決めよう。
+  \begin{align}
+  \norm{a\tket{n}}^2&=\tmel{n}{a^\dagger a}{n}=\tmel{n}{\tN-1}{n}=n-1\\
+  \norm{a^\dagger\tket{n}}^2&=\tmel{n}{aa^\dagger}{n}=n
+  \end{align}
+  となるから、
+  \begin{align}
+  a\tket{n}&=e^{i\alpha}\sqrt{n-1}\tket{n-1}\label{incr}\\
+  a^\dagger\tket{n}&=e^{i\beta}\sqrt{n}\tket{n+1}\label{decr}
+  \end{align}
+  と表せる。それぞれ $\alpha,\beta$ の位相の不定性を残してあるが、
+  \begin{align}
+  \tket{n}=\tN\tket{n}=aa^\dagger\tket{n}=e^{i\beta}\sqrt{n}a\tket{n+1}=e^{i(\alpha+\beta)}n\tket{n}
+  \end{align}
+  となり、$\beta=-\alpha$ と決められる。
+  $\tN$ が固有値 $n$ を持てば、$n\neq 1$ である限り \eqref{incr} より $a$ を $\tket{n}$ に作用させることで固有値 $n-1$ に対応する
+  固有状態を生み出せる。あるいは、$n\neq 0$ である限り \eqref{decr} より $a^\dagger$ を $\tket{n}$ に作用させることで固有値 $n+1$ に対応する
+  固有状態を生み出せる。
+ 
+  ところで
+  \begin{align}
+  n=\tmel{n}{\tN}{n}=\norm{a^\dagger\tket{n}}^2\ge0
+  \end{align}
+  より $\tN$ の固有値 $n\in\mathbb{R}$ は $n\ge 0$ を満たさなければならない。
+
+
+</body>
+
+</html>

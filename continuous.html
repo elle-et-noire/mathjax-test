@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>実数の連続性と関数の連続性</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="実数の連続性と関数の連続性の関連の話。">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+</head>
+
+<body>
+  <fieldset class="def">
+    <legend>連続の公理</legend>
+    <div>
+      有界閉区間の列が $[a_1,b_1]\supset[a_2,b_2]\supset\cdots$ を満たす（つまり $([a_i,b_i])_{i\in\mathbb{N}}$ が ${}^\forall n\in\mathbb{N}, [a_n,b_n]\supset[a_{n+1},b_{n+1}]$ を満たす）
+      とき、全ての区間の共通部分に含まれる実数が存在する：
+      \begin{align}
+        {}^\exists a\in\mathbb{R},\ \bigcap_{n\in\mathbb{N}}[a_n,b_n]=\qty{a}\neq \emptyset
+      \end{align}
+      という公理によって実数の連続性を表現する。
+    </div>
+  </fieldset>
+  一方
+  <fieldset class="def">
+    <legend>写像の連続性</legend>
+    <div>
+      $f\colon \mathbb{R}\to\mathbb{R}$ が $x\in\mathbb{R}$ で連続とは
+      \begin{align}
+        \text{任意の}\varepsilon >0 \text{に対して} \delta >0 \text{が存在して、} {}^\forall y\in\mathbb{R} \text{に対して} \abs{x-y} < \delta\implies \abs{f(x)-f(y)} < \varepsilon\label{eq:continuousfunction}
+      \end{align}
+      となることである。$f$ が $\mathbb{R}$ で連続とは $f$ が ${}^\forall x\in\mathbb{R}$ で連続であることである。
+    </div>
+  </fieldset>
+  $f$ が恒等写像 $\operatorname{id}$ の場合を考えれば、恒等写像が実数全体で連続であることは、\eqref{eq:continuousfunction}より
+  \begin{align}
+    {}^\forall x,{}^\forall y\in\mathbb{R},{}^\forall\varepsilon>0,{}^\exist\delta>0,\abs{x-y} < \delta\implies\abs{x-y} < \varepsilon
+  \end{align}
+  となり、これは $\delta=\varepsilon$ と取れば自明である。
+
+  <h2>参考文献</h2>
+  <ul>
+    <li><a href="https://ja.wikipedia.org/wiki/Unicode%E4%B8%80%E8%A6%A7_0000-0FFF" target="_blank" rel="noopener noreferrer external">Unicode一覧 0000-00FF - Wikipedia</a></li>
+    <li><a href="https://mathlandscape.com/greek-alphabet/" target="_blank" rel="noopener noreferrer external">ギリシャ文字一覧とLaTeXでの出力方法</a></li>
+  </ul>
+</body>
+</html>

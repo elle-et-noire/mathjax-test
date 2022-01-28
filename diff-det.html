@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>行列式の微分</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="行列式のn階微分">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+</head>
+
+<body>
+  \begin{align}
+    \dfrac{\var\det a}{\det a} &= \var \ln\det a = \ln\det(a+\delta a)-\ln\det(a)\\
+    &=\ln\det(1+a^{-1}\var a)\\
+    &\simeq \ln(1+\tr a^{-1}\var a)\quad (\text{$\var a_{ij}$ の$2$次以上は無視})\\
+    &\simeq \tr a^{-1}\var a\quad (\text{$\var a_{ij}$ の$2$次以上は無視})\\
+    &= (a^{-1})^{ji}\var a_{ij}\\
+    \therefore \var \det a &= \det a(a^{-1})^{ji}\var a_{ij}\\
+    \therefore \pdv{\det a}{a_{ij}}&=\det a(a^{-1})^{ji}
+  \end{align}
+  こうして行列式の、行列成分による偏微分が求まった。$2$次正方行列で確かめてみよう。
+  \begin{align}
+    A&=\mqty[a & b \\ c & d],\quad A^{-1}= \dfrac{1}{ad-bc}\mqty[d & -b \\ -c & a]\\
+    d&=\pdv{\det A}{a}=(ad-bc)\cdot \dfrac{d}{ad-bc}=d
+  \end{align}
+  となって成り立つ。
+  \begin{align}
+    (a^{-1})^{ij}a_{jk}&=\delta^i_k\\
+    \therefore \var(a^{-1})^{ij}a_{jk}&=-(a^{-1})^{il}\var a_{lk}\\
+    \therefore \var(a^{-1})^{ij}&=-(a^{-1})^{il}\var a_{lk}(a^{-1})^{kj}
+  \end{align}
+  より
+  \begin{align}
+    \var(\det a(a^{-1})^{ji})&=\var\det a(a^{-1})^{ji}+\det a\var(a^{-1})^{ji}\\
+    &=\det a(a^{-1})^{lk}\var a_{kl}(a^{-1})^{ji}-\det a(a^{-1})^{jk}\var a_{kl}(a^{-1})^{li}\\
+    &=\det a\qty((a^{-1})^{ji}(a^{-1})^{lk}-(a^{-1})^{jk}(a^{-1})^{li})\var a_{kl}\\
+    \therefore \pdv{\det a}{a_{ij}}{a_{kl}}&=\det a\qty((a^{-1})^{ji}(a^{-1})^{lk}-(a^{-1})^{jk}(a^{-1})^{li})
+  \end{align}
+  と、成分による行列式の$2$階微分が求まった。$3$次正方行列で確かめてみよう。
+  \begin{align}
+    A&=\mqty[a & b & c \\ d & e & f \\ g & h & i],\quad \det A=aei+bfg+cdh-afh-bdi-ceg,\quad A^{-1}=\dfrac{1}{\det A}\mqty[ei - fh & ch - bi & bf - ce \\ fg - di & ai - cg & cd - af \\ dh - eg & bg - ah & ae - bd]\\
+    -h &= \pdv{\det A}{a}{f}=\pdv{\det A}{A_{11}}{A_{23}}=\det A\qty((A^{-1})^{11}(A^{-1})^{32}-(A^{-1})^{12}(A^{-1})^{31})\\
+    &=\dfrac{(ei-fh)(bg-ah)-(ch-bi)(dh-eg)}{\det A}
+    =\dfrac{(-aei-fbg+ceg+bid)h+(af-cd)h^2}{aei+bfg+cdh-afh-bdi-ceg}=-h
+  \end{align}
+  となって成り立つ。
+  一般化すれば
+  \begin{align}
+    \dfrac{\partial^n\det a}{\partial a_{i_1j_1}\cdots\partial a_{i_nj_n}}&=\det a\sum_{\sigma\in\mathfrak{S}_n}\operatorname{sgn}\sigma (a^{-1})^{j_1i_{\sigma(1)}}\cdots (a^{-1})^{j_ni_{\sigma(n)}}
+  \end{align}
+  <h2>参考文献</h2>
+  <a href="https://www.ims.tsukuba.ac.jp/~shugo_suzuki_lab/upload.pdf" target="_blank" rel="noopener noreferrer external">ディラック記法による線形代数（PDF）</a>
+</body>
+
+</html>

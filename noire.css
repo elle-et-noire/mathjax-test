@@ -96,14 +96,14 @@ body {
 }
 
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   body {
     padding: 0;
     margin-left: auto;
     margin-right: auto;
     width: 450px;
   }
-}
+} */
 
 /* 新しいタブのアイコンを css だけで */
 
@@ -193,11 +193,11 @@ a[target="_blank"]:after {
   padding: 5px;
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .def div {
     width: 400px;
   }
-}
+} */
 
 .thm {
   position: relative;
@@ -228,11 +228,11 @@ a[target="_blank"]:after {
   padding: 10px;
 }
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .thm div {
     width: 400px;
   }
-}
+} */
 
 .proof {
   position: relative;

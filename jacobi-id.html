@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Jacobi 恒等式の証明</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="長年（1年）の疑問が解決したのでメモします。">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+</head>
+
+<body>
+  $$
+    \def\pb#1#2{\comm{#1}{#2}_{\mathrm{PB}}}
+  $$
+  <fieldset class="thm">
+    <legend>定理</legend>
+    <div>
+      Poisson括弧 $\pb{\bullet_1}{\bullet_2}\coloneqq\sum_i\qty(\partial_{p_i}\bullet_1\partial_{q_i}\bullet_2-\partial_{q_i}\bullet_1\partial_{p_i}\bullet_2)$ が
+      \begin{align}
+        \pb{\pb{A}{B}}{C}+\pb{\pb{B}{C}}{A}+\pb{\pb{C}{A}}{B}&=0. \label{eq:jacobi}\tag{Jacobi id.}
+      \end{align}
+    </div>
+  </fieldset>
+  <details class="proof" open>
+    <summary>証明</summary>
+    <div class="scroll">
+      \begin{align}
+        \pb{\bullet}{B}&\eqqcolon \xi^i\partial_i\bullet\\
+        \pb{\bullet}{C}&\eqqcolon \eta^j\partial_j\bullet
+      \end{align}
+      などとおく。\eqref{eq:jacobi}の第$1$項は
+      \begin{align}
+        \pb{\pb{A}{B}}{C}&=\eta^j\partial_j(\xi^i\partial_i A)\\
+        &=\eta^j\xi^i_{,j}\partial_iA+\eta^j\xi^i\partial_j\partial_iA
+      \end{align}
+      となり、一方で第$3$項は $-\pb{\pb{A}{C}}{B}$ であるから、\eqref{eq:jacobi}の第$1$項と第$3$項の和は
+      \begin{align}
+        (\eta^j\xi^i_{,j}-\xi^j\eta^i_{,j})\partial_iA
+      \end{align}
+      と $A$ の$1$階微分になる。対称性から、\eqref{eq:jacobi}は $A,B,C$ の$1$階微分しか含まない。ところで\eqref{eq:jacobi}を展開すると $\partial^2B\partial^2C\partial A$ のような項がたくさん出てくる。$\partial A$ の係数は $\partial^2B\partial^2C$ の多項式でしかありえず、それらが打ち消し合って$1$階微分になるなどということも起こりえない。今$2$階微分は含まれないことが分かったので、係数は $0$ となる。
+    </div>
+  </details>
+  Landau-Lifshitzの力学の教科書では$2$階微分を含まないというところまでしか書かれておらず、勘のよい読者でない私は参考文献に挙げたPDFにたどり着くまで$1$年近く「$1$階微分残るじゃん」と言い続けていた（嘘）。
+  <h2>参考文献</h2>
+  <a href="https://www.yamanami.tokyo/pdf/books/analytical_mechanics.pdf" target="_blank" rel="noopener noreferrer external">細谷 曉夫『解析力学』（PDF）</a>
+</body>
+
+</html>

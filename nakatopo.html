@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <title>中トポを読む人のために</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="通称中トポの誤植訂正、行間埋め（途中）です。">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'cah6dme',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+</head>
+
+<body>
+  \[
+    \def\i{\mathrm{i}}
+    \def\e{\mathrm{e}}
+  \]
+  <h1>中トポを読む人のために</h1>
+  『理論物理学のための幾何学とトポロジーⅠ[原著第 $2$ 版]』（中原 幹夫、佐久間 一浩）第 $1$ 版第 $2$ 刷の誤植の指摘、行間埋めです。
+
+  <ul>
+    <li>【誤】p17_13L_固「<b>生成演算子</b> $\hat{a}$ と<b>消滅演算子</b> $\hat{a}^\dagger$」$\to$「<b>消滅演算子</b> $\hat{a}$ と<b>生成演算子</b> $\hat{a}^\dagger$」
+    <li>【誤】p20_22L_式 $\boxed{\ds(1-\i)\int_{-\infty}^\infty\cdots}\to\boxed{\ds(1-\i)\int_{+\infty}^{-\infty}\cdots}$</li>
+    <li> p37_9L_式について（ちょっと冗長）<br>
+      \begin{align}
+      N\ket{0}=0,\quad N\ket{1}=\ket{1},\quad \braket{a}{b}=\delta_{ab}
+      \end{align}
+      となるように $N$ の固有値に対する固有状態を定める。
+      \begin{align}
+      [AB,C]=A(BC+CB)-(AC+CA)B=A\{B,C\}-\{A,C\}B
+      \end{align}
+      と $\{c,c^\dagger\}=\{c^\dagger,c\}=1$ を用いれば
+      \begin{align}
+      [N,c]&=[c^\dagger c,c]=-c\\
+      [N,c^\dagger]&=[c^\dagger c,c^\dagger]=c^\dagger
+      \end{align}
+      が成り立つ。$c$ を $\ket{n}$ に作用させた状態は
+      \begin{align}
+      Nc\ket{n}&=(cN+[N,c])\ket{n}=(n-1)c\ket{n}\\
+      Nc^\dagger\ket{n}&=(c^\dagger N+[N,c^\dagger])\ket{n}=(n+1)c^\dagger\ket{n}\\
+      \end{align}
+      と、$N$ に対する固有値を出力するので
+      \begin{align}
+      c\ket{n}&\propto\ket{n-1}\\
+      c^\dagger\ket{n}&\propto\ket{n+1}
+      \end{align}
+      の関係にあることが分かる。これと
+      \begin{align}
+      \norm{c\ket{n}}^2&=\mel{n}{c^\dagger c}{n}=n
+      \end{align}
+      より
+      \begin{align}
+      c\ket{n}=\e^{\i\alpha}\sqrt{n}\ket{n-1}
+      \end{align}
+      と、$c$ の $\ket{n}$ に対する作用が $\alpha$ の位相の不定性を残して定まる。簡単さのため、あるいは慣習より $\alpha=0$ とすることに決める。すると
+      \begin{align}
+      (n+1)\ket{n+1}&=N\ket{n+1}=c^\dagger c\ket{n+1}=\sqrt{n+1}\,c^\dagger\ket{n}\\
+      \therefore c^\dagger\ket{n}&=\sqrt{n+1}\ket{n+1}
+      \end{align}
+      より $c^\dagger$ の $\ket{n}$ に対する作用も定まる。あとは $n=0,1$ を代入すればよい。ただし、$c^\dagger\ket{1}$ については
+      \begin{align}
+      c^\dagger\ket{1}=c^\dagger N\ket{1}=c^\dagger c^\dagger c\ket{1}=0
+      \end{align}
+      とする必要がある。
+    </li>
+    <li>p_39_問1.8 もちろん $\ds{\pdv{\theta_i}}(\theta_j f)+\theta_j\pdv{f}{\theta_i}=\delta_{ij} f$ を示せ、の意。
+    </li>
+    <li>p41_12L_を 「$\{\theta_i\}$ と $\{\theta_i^\ast\}$ は，$2$ つの独立な Grassmann 数の集合である」とは、
+      \begin{align}
+      \{\theta_i,\theta_j\}=\{\theta_i^\ast,\theta_j^\ast\}=\{\theta_i,\theta_j^\ast\}=0,\quad \forall i,j
+      \end{align}
+      が成り立つという意味であろう。あるいは簡単に、「$\{\theta_i,\theta^\ast_i\}_i$ は Grassmann 代数の基底となりうる」と言い換えてもいいかもしれない。
+    </li>
+    <li>【誤】p42_4L_第2式 $\ds\boxed{\eta_k^\ast=\dfrac{1}{\sqrt{2}\i}(\theta_k-\i\theta'_k)}\to
+      \boxed{\eta_k^\ast=\dfrac{1}{\sqrt{2}}(\theta_k-\i\theta'_k)}$</li>
+    <li>p42_問1.9 右辺の符号は決まらないはず。</li>
+  </ul>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>角運動量演算子の固有値</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+</head>
+
+<body>
+  $J_x,J_y,J_z$ が
+  \begin{align}
+    \comm{J_i}{J_j}=\i\hbar\varepsilon_{ijk}J_k
+  \end{align}
+  という交換関係を満たすとする。
+  \begin{align}
+    \vb*{J}\coloneqq {}^t\!(J_x\ J_y\ J_z)
+  \end{align}
+  と定義すると、
+  \begin{align}
+    \comm{\bm{J}^2}{J_z}&=\comm{J_x^2+J_y^2+J_z^2}{J_z}\\
+    &=J_x\comm{J_x,J_z}+\comm{J_x,J_z}J_x+J_y\comm{J_y,J_z}+\comm{J_y,J_z}J_y\\
+    &=-J_xJ_y-J_yJ_x+J_yJ_x+J_xJ_y\\
+    &=0
+  \end{align}
+  となり、$\bm{J}^2$ と $J_z$ が可換であることが分かる（$J_x,J_y$ も同様に $\bm{J}^2$ と可換である）。したがって
+  \begin{align}
+    \bm{J}^2\ket{a,b}&=a\ket{a,b}\\
+    J_z\ket{a,b}&=b\ket{a,b}
+  \end{align}
+  となる同時固有ケットが得られる。
+  \begin{align}
+    \bm{e}\mathbb{abcdefghijklmnopqrstuvwxyz}\Finv\beth\gimel
+  \end{align}
+
+  <h2>参考文献</h2>
+  『第$2$版 J.J.Sakurai 現代の量子力学』
+</body>
+
+</html>
