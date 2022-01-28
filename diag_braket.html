@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dirac 記法での対角化</title>
+  <script src="mathjax-config.js" async></script>
+  <link rel="stylesheet" href="noire.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="lumières">
+  <meta property="og:description" content="対角化可能な演算子の可換な組が同時対角化可能であることを、正規行列が対角化可能であることを使わずに示しています。">
+  <meta property="og:url" content="https://elle-et-noire.github.io/lumieres/">
+  <meta property="og:image" content="https://user-images.githubusercontent.com/51241098/139921229-151ff350-13df-40c0-8709-b575bb6fdc6a.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@L48610">
+  <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
+</head>
+
+<body>
+  <fieldset class="thm">
+    <legend>定理</legend>
+    <div>
+      対角化可能な演算子 $A,B$ が可換なら $A,B$ は同時対角化可能である。
+    </div>
+  </fieldset>
+  <details class="proof" open>
+    <summary>証明</summary>
+    <div class="scroll">
+      $A$ の相異なる固有値を $\qty{a_i}_i$ とし、$a_i$ に対応する固有空間への射影演算子を $\mathcal{P}_i$ とする。同様に $B$ の相異なる固有値 $\qty{b_j}_j$ および対応する射影演算子 $\qty{\mathcal{Q}_j}_j$ も定める。すると
+      \begin{align}
+        A&=\sum_i a_i\mathcal{P}_i,& \sum_i\mathcal{P}_i&=I,&\mathcal{P}_i\mathcal{P}_{i'}&=\delta_{ii'}\mathcal{P}_i\\
+        B&=\sum_j b_j\mathcal{Q}_j,& \sum_j\mathcal{Q}_j&=I,&\mathcal{Q}_j\mathcal{Q}_{j'}&=\delta_{jj'}\mathcal{Q}_j
+      \end{align}
+      より
+      \begin{align}
+        \mathcal{P}_i&=\dfrac{\prod_{l\neq i}(A-a_lI)}{\prod_{l\neq i}(a_i-a_l)}\\
+        \mathcal{Q}_j&=\dfrac{\prod_{m\neq j}(B-b_mI)}{\prod_{m\neq j}(b_j-b_m)}
+      \end{align}
+      と表せる。実際 $l\neq i$ に対して
+      \begin{align*}
+        \dfrac{A-a_lI}{a_i-a_l}&=\mathcal{P}_i+\sum_{n\neq l,i}\dfrac{a_n-a_l}{a_i-a_l}\mathcal{P}_n
+      \end{align*}
+      となり、これを $l\neq i$ に亘って掛け合わせると $\mathcal{P}_i$ だけが残る。$\mathcal{Q}_i$ も同様。そして、$\mathcal{P}_i,\mathcal{Q}_j$ は $A,B,I$ だけで表されているので可換である：
+      \begin{align}
+        \comm{\mathcal{P}_i}{\mathcal{Q}_j}=0.
+      \end{align}
+      このとき
+      \begin{align}
+        \sum_{i,j}\mathcal{P}_i\mathcal{Q}_j=&I,&(\mathcal{P}_i\mathcal{Q}_j)(\mathcal{P}_{i'}\mathcal{Q}_{j'})&=\delta_{ii'}\delta_{jj'}\mathcal{P}_i\mathcal{Q}_j\label{eq:pq-split}
+      \end{align}
+      が成り立つので $\qty{\mathcal{P}_i\mathcal{Q}_j}_{i,j}$ は射影であり、
+      \begin{align}
+        A&=\sum_{i,j} a_i\mathcal{P}_i\mathcal{Q}_j\\
+        B&=\sum_{i,j} b_j\mathcal{P}_i\mathcal{Q}_j
+      \end{align}
+      とスペクトル分解できる。$\mathcal{P}_i$ に対応する固有空間を $W_i$、$\mathcal{Q}_j$ に対応する固有空間を $V_j$ とすると、\eqref{eq:pq-split}は $\qty{W_i\cap V_j}_{i,j}$ によって Hilbert 空間 $\mathcal{H}$ を直和分解できることを意味している。各 $W_i\cap V_j$ は依然 $2$ 次以上の次元を持ちうるので適宜（Schmidt の直交化法などにより）$W_i\cap V_j$ 内の正規直交基底をとることで、$\mathcal{H}$ 全体の正規直交基底 $\qty{\ket{a_i,b_j,k}}_{i,j,k}$ であって
+      \begin{align}
+        A\ket{a_i,b_j,k}&=a_i\ket{a_i,b_j,k},& B\ket{a_i,b_j,k}=b_j\ket{a_i,b_j,k}
+      \end{align}
+      を満たすようなものを取ることができる。すなわち $A,B$ は同時対角化可能である。
+    </div>
+  </details>
+  <h2>参考文献</h2>
+  <a href="https://www.ims.tsukuba.ac.jp/~shugo_suzuki_lab/upload.pdf" target="_blank" rel="noopener noreferrer external">ディラック記法による線形代数（PDF）</a>
+</body>
+
+</html>

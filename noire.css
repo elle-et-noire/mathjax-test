@@ -1,0 +1,389 @@
+@font-face {
+  font-family: "CloisterBlack";
+  src: url(fonts/CloisterBlack.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "MadokaRunes";
+  src: url(fonts/MadokaRunes-2.0.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "AppliMincho";
+  src: url(fonts/ppliMincho.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SFMonoRegular";
+  src: url(fonts/FontsFree-Net-SFMono-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HannariMincho";
+  src: url(fonts/HannariMincho-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SawarabiMincho";
+  src: url(fonts/SawarabiMincho-Regular.ttf) format("truetype");
+}
+
+body {
+  font-family: "AppliMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #002b36;
+  color: #f0f6fc;
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 1.75;
+  padding: 50px 50px 50px 50px;
+  font-kerning: normal;
+  /* font-feature-settings: "palt"; 字詰め（目下意味なし） */
+}
+
+/* カーニングを備えたフォントに切り替える */
+.kern {
+  font-family: source-han-serif-japanese, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lumieres {
+  display: flex;
+  align-items: center;
+}
+
+/* ロゴを回転 */
+.lumieres img {
+  display: block;
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: auto;
+  animation: rotate 32s steps(9600) 0s infinite;
+}
+
+.lumieres div {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  background-image: url(https://user-images.githubusercontent.com/51241098/140038682-258b56e1-1945-429b-8d12-1aa4bc0473fb.png);
+  border-radius: 50%;
+  margin-left: auto;
+  animation: rotate 32s steps(9600) 0s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.lumieres span {
+  font-family: "CloisterBlack", serif;
+  font-size: 64px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #002b36, 0 0 1em white, 0 0 0.2em white;
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+  }
+}
+
+/* 新しいタブのアイコンを css だけで */
+
+.blank-icon {
+  box-sizing: border-box;
+  position: relative;
+  width: 20px;
+  height: 16px;
+  transform: scale(3);
+}
+
+.blank-icon:before, .blank-icon:after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-color: black;
+}
+
+.blank-icon:before {
+  top: 0;
+  left: 0;
+  border-width: 3px;
+}
+
+.blank-icon:after {
+  top: 6px;
+  left: 6px;
+  border-width: 0 3px 3px 0;
+}
+
+a:link {
+  color: #ff88dd;
+}
+
+a:visited {
+  color: #dd88ff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: #ffaaff;
+  text-decoration: none;
+}
+
+a[target="_blank"]:after {
+  background: url(https://user-images.githubusercontent.com/51241098/139593661-040a49a0-3849-4395-85b1-c340e0f4e9f4.png);
+  content: "";
+  margin-left: 3px;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.def {
+  position: relative;
+  margin-top: 41px;
+  margin-bottom: 10px;
+  padding: 0.5em 1em;
+  border: 5px solid #62c1ce;
+}
+
+.def legend {
+  position: absolute;
+  display: inline-block;
+  top: -31px;
+  left: -5px;
+  padding: 3px 10px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #62c1ce;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+
+.def div {
+  text-indent: 2em;
+  margin: 5px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .def div {
+    width: 400px;
+  }
+}
+
+.thm {
+  position: relative;
+  margin-top: 41px;
+  margin-bottom: 10px;
+  padding: 0.5em 1em;
+  border: 5px solid #ff0099;
+}
+
+.thm legend {
+  position: absolute;
+  display: inline-block;
+  top: -31px;
+  left: -5px;
+  padding: 3px 10px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #ff0099;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+
+.thm div {
+  text-indent: 2em;
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .thm div {
+    width: 400px;
+  }
+}
+
+.proof {
+  position: relative;
+  padding: 0.25em 1em;
+  margin: 2em 0;
+  top: 0;
+  display: flex;
+}
+
+.proof:before, .proof:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 10px;
+  height: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.proof:before {
+  border-left: dotted 2px #15adc1;
+  border-top: dotted 2px #15adc1;
+  border-bottom: dotted 2px #15adc1;
+  left: 0;
+}
+
+.proof:after {
+  border-top: dotted 2px #15adc1;
+  border-right: dotted 2px #15adc1;
+  border-bottom: dotted 2px #15adc1;
+  right: 0;
+}
+
+.proof summary {
+  font-weight: bold;
+}
+
+.proof div {
+  text-indent: 2em;
+  padding: 10px 5px 0 5px;
+  margin: 0;
+}
+
+.proof div::after {
+  content: "□";
+  float: right;
+  font-size: 20px;
+}
+
+ol {
+  counter-reset: cnt;
+}
+
+ol li {
+  list-style-type: none;
+  counter-increment: cnt;
+  position: relative;
+  text-indent: 0;
+  padding-left: 0;
+}
+
+ol li:before {
+  content: "(" counter(cnt, lower-roman) ")";
+  display: inline-block;
+  margin-left: -4.5em;
+  width: 4em;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 背景色を含めて印刷されるようにしたい */
+
+body {
+  -webkit-print-color-adjust: exact;
+}
+
+/* スクロールバーに丸みをつける */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #777777;
+  border-radius: 5px;
+}
+
+/* mouse over で tooltip */
+
+span[data-descr] {
+  position: relative;
+  text-decoration: underline;
+  color: #00F;
+  cursor: help;
+}
+
+span[data-descr]:hover::after {
+  content: attr(data-descr);
+  position: absolute;
+  left: 0;
+  top: 24px;
+  min-width: 200px;
+  border: 1px #aaaaaa solid;
+  border-radius: 10px;
+  background-color: #ffffcc;
+  padding: 12px;
+  color: #000000;
+  font-size: 14px;
+  z-index: 1;
+}
+
+/* LaTeX コマンドを MathJax 公式ドキュメントみたいな見た目にしたい */
+code {
+  border-radius: 3px;
+  font-family: SFMonoRegular, monospace;
+  font-size: 12px;
+}
+
+/* 表も縞々にしたい */
+table {
+  border-collapse: collapse;
+}
+
+table td, table th {
+  padding: 8px 16px;
+  border: solid 1px gray;
+}
+
+table tr.row-odd {
+  background-color: #204b56;
+}
+
+table tr.row-even {
+  background-color: inherit;
+}
+
+
+.wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: auto;
+}
+/* 数式にスクロールバー https://ramenhuhu.com/wordpress-mathjaxlatex-scroll */
+
+div.scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.scroll::-webkit-scrollbar {
+  width:15px;
+}
