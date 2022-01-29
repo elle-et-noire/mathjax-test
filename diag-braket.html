@@ -20,7 +20,7 @@ layout: default
   <link rel="shortcut icon" href="https://user-images.githubusercontent.com/51241098/139574778-08c0d89e-b88e-4faa-baf5-4ee2af007b81.png" type="image/png">
 </head>
 
-<body>
+<body class="scroll">
   <fieldset class="thm">
     <legend>定理</legend>
     <div>
@@ -29,7 +29,7 @@ layout: default
   </fieldset>
   <details class="proof" open>
     <summary>証明</summary>
-    <div class="scroll">
+    <div>
       $A$ の相異なる固有値を $\qty{a_i}_i$ とし、$a_i$ に対応する固有空間への射影演算子を $\mathcal{P}_i$ とする。同様に $B$ の相異なる固有値 $\qty{b_j}_j$ および対応する射影演算子 $\qty{\mathcal{Q}_j}_j$ も定める。すると
       \begin{align}
         A&=\sum_i a_i\mathcal{P}_i,& \sum_i\mathcal{P}_i&=I,&\mathcal{P}_i\mathcal{P}_{i'}&=\delta_{ii'}\mathcal{P}_i\\
