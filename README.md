@@ -13,3 +13,5 @@ Copy default.html corresponding to your theme from https://github.com/pages-them
        {% include mathjax-v3.html %}  <!-- insert this line -->
    </head>
 ```
+
+https://elle-et-noire.github.io/mathjax-test/
